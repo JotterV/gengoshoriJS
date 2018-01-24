@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title></title>
+</head>
+<script>
+	function splitter(a) {
+		var entered = a;
+		var originalData = entered.split("");
+		var text1 = "";
+		var text2 = "";
+		for ( i = 0 ; i < entered.length ; i++) {
+			if (i % 2 == 0 ) {
+				text1 += originalData[i];
+			}
+			else {
+				text2 += originalData[i];
+			}
+			
+			
+		}
+		document.getElementById("result").innerHTML = "word1: " + text1 +" "+ "word2: " + text2 ;
+	}
+
+</script>
+<body>
+<button onclick="splitter('パタトクカシーー')">execute</button>
+<p id="result">Default = failure</p>
+
+</body>
+</html>

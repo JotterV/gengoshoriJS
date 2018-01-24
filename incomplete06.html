@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title></title>
+</head>
+<script>
+	function addit() {
+		var word1 = document.getElementById("word1").value;
+		var word2 = document.getElementById("word2").value;
+		var firstWord = word1.split("");
+		var secondWord = word2.split("");
+		var result1 = new Array(word1.length -1);
+		var result2 = new Array(word2.length -1);
+
+		console.log(word1.length);
+
+		for (i = 0 ; i < word1.length -1 ; i++) {
+			result1[i] = word1[i] + word1[i+1];
+		}
+		for (i = 0 ; i < word2.length -1 ; i++) {
+			result2[i] = word2[i] + word2[i+1];
+		}
+		/*
+		var union = result1.concat(result2);
+		var exclusion = [];
+		var counter = 0;
+		for (i = 0 ; i < union.length ; i++) {
+			for (j = 0; j < union.length ; j++) {
+				if (union[i] !== union[j]) {
+					counter++;
+				}
+			}
+			if (counter == union.length ) {
+				exclusion[i] = union[i];
+			}
+		}
+		function remove(array, element) {
+		    const index = array.indexOf(element);
+		    array.splice(index, 1);
+		}
+
+
+		var excludedWord1 = word1;
+		for (i = 0 ; i < word1.length ; i++) {
+			for (j = 0; j < word2.length ; j++) {
+				if (word1[i] == word2[j]) {
+					excludedWord1[i].remove();
+				}
+			}
+		}
+		var excludedWord2 = word2;
+		for (i = 0 ; i < word2.length ; i++) {
+			for (j = 0; j < word1.length ; j++) {
+				if (word2[i] == word1[j]) {
+					excludedWord2[i].remove();
+				}
+			}
+		}
+
+		for (i = 0; i < word1.length ; i++) {
+
+		}*/
+
+		document.getElementById("result").innerHTML = "X bi-gram: " + result1 + '<br>' + "Y bi-gram: " + result2;
+		document.getElementById("result2").innerHTML = "Union of bi-grams X & Y: " + union + '<br>' + "Exclusion of bi-grams X & Y: " + exclusion;
+		document.getElementById("result3").innerHTML = "Only in X: " + excludedWord1 + '<br>' + "Only in Y: " + excludedWord2;
+
+ 	}
+</script>
+<body>
+	<form>
+		<input type="text" id="word1"><br>
+		<input type="text" id="word2"><br>
+	</form>
+<button onclick="addit()">execute</button>
+<p id="result">Default = failure</p>
+<p id="result2">Default = failure</p>
+<p id="result3">Default = failure</p>
+
+</body>
+</html>

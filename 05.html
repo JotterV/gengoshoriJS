@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title></title>
+</head>
+<script>
+	function grammed() {
+		var sentence = document.getElementById("sentence").value;
+		var letters = sentence.split("");
+		var words = sentence.split(" ");
+		var result1 = new Array(letters.length -1);
+		var result2 = new Array(words.length -1);
+
+
+
+		for (i = 0 ; i < letters.length -1 ; i++) {
+			result1[i] = letters[i] + letters[i+1];
+		}
+		for (i = 0 ; i < words.length -1 ; i++) {
+			result2[i] = words[i] + words[i+1];
+		}
+
+
+
+
+		document.getElementById("result").innerHTML = "bi-gram letters: " + result1 + '<br>' + "bi-gram words: " + result2;
+ 	}
+</script>
+<body>
+	<form>
+		<input type="text" id="sentence"><br>
+	</form>
+<button onclick="grammed()">execute</button>
+<p id="result">Default = failure</p>
+
+</body>
+</html>

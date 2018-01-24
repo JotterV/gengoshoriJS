@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title></title>
+</head>
+<script>
+	function splitter2(){
+		var entry = document.getElementById("entry").value;
+		var words = entry.split(" ");
+		words.sort();
+		var alphabetized = words.join(" ");
+		document.getElementById("result").innerHTML = alphabetized;
+		
+	}
+
+
+</script>
+<body>
+<input type="text" id="entry"><br>
+<button onclick="splitter2()">execute</button>
+<p id="result">Default = failure</p>
+
+</body>
+</html>

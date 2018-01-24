@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="format-detection" content="telephone=no,address=no,email=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title></title>
+</head>
+<script>
+	function addit() {
+		var word1 = document.getElementById("word1").value;
+		var word2 = document.getElementById("word2").value;
+		var firstWord = word1.split("");
+		var secondWord = word2.split("");
+		var result = "";
+		for (i = 0; i < word1.length; i++ ){
+			result += firstWord[i] + secondWord[i];
+		}
+		document.getElementById("result").innerHTML = "result: " + result ;
+ 	}
+</script>
+<body>
+	<form>
+		<input type="text" id="word1"><br>
+		<input type="text" id="word2"><br>
+	</form>
+<button onclick="addit()">execute</button>
+<p id="result">Default = failure</p>
+
+</body>
+</html>
